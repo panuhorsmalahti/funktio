@@ -5,18 +5,22 @@
  * @param {object} object to check.
  * @returns {boolean} True if the input parameter is an object.
  */
-const isObject = object => object && typeof object === "object";
+"use strict";
+
+var isObject = function isObject(object) {
+  return object && typeof object === "object";
+};
 
 /**
  * Validates that the source object is an object and the property is a string.
  * @param {object} source
  * @param {string} property
  */
-const validateObjectAndProperty = (source, property) => {
+var validateObjectAndProperty = function validateObjectAndProperty(source, property) {
   if (!isObject(source) || !property) {
     throw new Error("Invalid parameters for updated().");
   }
-}
+};
 
 /**
  * Return a new object by copying the existing own properties of source to the
@@ -26,12 +30,12 @@ const validateObjectAndProperty = (source, property) => {
  * @param {any} value to set to the given property.
  * @returns {any}
  */
-const updated = (source, property, value) => {
-  const out = {};
+var updated = function updated(source, property, value) {
+  var out = {};
 
   validateObjectAndProperty(source, property);
 
-  Object.keys(source).forEach(key => {
+  Object.keys(source).forEach(function (key) {
     out[key] = source[key];
   });
 
@@ -46,12 +50,14 @@ const updated = (source, property, value) => {
  * @param {object} source
  * @param {string} property to remove.
  */
-const removed = (source, property) => {
-  const out = {};
+var removed = function removed(source, property) {
+  var out = {};
 
   validateObjectAndProperty(source, property);
 
-  Object.keys(source).filter(key => key !== property).forEach(key => {
+  Object.keys(source).filter(function (key) {
+    return key !== property;
+  }).forEach(function (key) {
     out[key] = source[key];
   });
 
