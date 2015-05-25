@@ -1,0 +1,27 @@
+{
+  "name": "funktio",
+  "version": "0.0.1",
+  "description": "A tiny functional programming toolbox.",
+  "author": "Panu Horsmalahti <panu.horsmalahti@iki.fi>",
+  "scripts": {
+    "test": "node test.js",
+    "build": "babel funktio.es6.js -o funktio.js; babel test.es6.js -o test.js; "
+  },
+  "main": "funktio.js",
+  "repository": {
+  "type": "git",
+    "url": "https://github.com/panuhorsmalahti/funktio.git"
+  },
+  "keywords": [
+    "funktio",
+    "functional",
+    "updated",
+    "removed"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.4.7"
+  },
+  "files": ["funktio.js"],
+  "license": "MIT"
+}
